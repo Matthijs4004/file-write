@@ -1,4 +1,16 @@
 import tkinter as tk
+from os.path import exists as file_exists
+
+check = file_exists("C:/Projecten/Software Dev/Mapje 9/file-write/actions.log")
+if check == False:
+    print("File bestaat niet, maar wordt nu aangemaakt")
+    with open("C:/Projecten/Software Dev/Mapje 9/file-write/actions.log", "w") as f:
+        f.write("Nieuwe file is aangemaakt!\n")
+else:
+    print("File bestaat al")
+    with open("C:/Projecten/Software Dev/Mapje 9/file-write/actions.log", "w") as f:
+        f.write("file bestond al!\n")
+
 
 window = tk.Tk()
 file = open("C:/Projecten/Software Dev/Mapje 9/file-write/actions.log", "a")
